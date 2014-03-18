@@ -6,10 +6,19 @@ import webnotes
 
 from webnotes.utils import flt, fmt_money, getdate
 from webnotes import _
+from webnotes.model.doc import Document, make_autoname
 	
 class DocType:
 	def __init__(self,d,dl):
 		self.doc, self.doclist = d, dl
+
+	def autoname(self):
+		gl_name = make_autoname(webnotes.conn.get_value('DocType', 'GL Entry', 'autoname'))
+		company = webnotes.conn.sql(""" select name from tabCompany 
+				where name = (select value from tabSingles 
+					where doctype = 'Global Defaults' and field = 'default_company') """)[0][0]
+		self.doc.name = company + ' ' + gl_name
+
 
 	def validate(self):
 		self.check_mandatory()

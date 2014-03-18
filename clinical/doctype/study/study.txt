@@ -2,7 +2,7 @@
  {
   "creation": "2014-01-21 18:39:40", 
   "docstatus": 0, 
-  "modified": "2014-02-02 20:29:57", 
+  "modified": "2014-03-14 18:30:49", 
   "modified_by": "Administrator", 
   "owner": "Administrator"
  }, 
@@ -107,6 +107,19 @@
   "fieldname": "study_fees", 
   "fieldtype": "Currency", 
   "label": "Study Fees"
+ }, 
+ {
+  "doctype": "DocField", 
+  "fieldname": "study_items", 
+  "fieldtype": "Section Break", 
+  "label": "Study Items"
+ }, 
+ {
+  "doctype": "DocField", 
+  "fieldname": "study_item_details", 
+  "fieldtype": "Table", 
+  "label": "Study Item Details", 
+  "options": "Study Recipe Details"
  }, 
  {
   "doctype": "DocField", 

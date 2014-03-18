@@ -329,6 +329,9 @@ cur_frm.cscript.advance_entry = function(doc, dt ,dn) {
 	d.show();
 }
 
+
+
+
 cur_frm.cscript.mode_of_payment = function(doc, cdt, cdn) {
 	get_server_fields('child_entry','','',doc,cdt,cdn,1,function(r,rt) { refresh_field("entries");refresh_field('id')});
 	cur_frm.cscript.calculate_amt(doc,cdt,cdn)
